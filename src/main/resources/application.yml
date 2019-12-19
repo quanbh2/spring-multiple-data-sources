@@ -1,0 +1,51 @@
+# MY-SQL
+mysql:
+  bifrost:
+    jdbcUrl: jdbc:mysql://dbstagingmysql.edumall.io:3306/bifrosttlstaging?useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&maxReconnects=1000
+    username: bifrosttlstaging
+    password: ***
+    driverClassName: com.mysql.cj.jdbc.Driver
+    autoReconnect: true
+    maxLifetime: 2800000
+    connectionTimeout: 500000
+    serverSelectionTimeout: 500000
+  epayment:
+    jdbcUrl: jdbc:mysql://dbstagingmysql.edumall.io:3306/epaymentstaging?useUnicode=yes&characterEncoding=UTF-8
+    username: epaymentstaging
+    password: ***
+    driverClassName: com.mysql.cj.jdbc.Driver
+    autoReconnect: true
+    maxLifetime: 2800000
+    connectionTimeout: 500000
+    serverSelectionTimeout: 500000
+
+# MongoDB
+mongodb:
+  jackfruit:
+    host: dbstaging-tl2.edumall.io
+    port: 27017
+    database: jackfruittl
+    username: jackfruittl2
+    password: ***
+  kelly:
+    host: dbstaging-tl2.edumall.io
+    port: 27017
+    database: kelleytl2
+    username: kelleytl22
+    password: ***
+
+
+
+spring:
+  jpa:
+    open-in-view: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-reconnect: true
+      minimum-idle: 5
+      maximumPoolSize: 100
+      max-lifetime: 28000000
+      connection-timeout: 500000
+      validationTimeout: 5000000
+      connection-test-query: SELECT 1 FROM DUAL
